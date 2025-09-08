@@ -1,4 +1,7 @@
 {
   "name": "app",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "codemirror": "^6.0.2"
+  }
 }
