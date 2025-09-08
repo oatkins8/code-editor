@@ -7,3 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+User::SEED.each do |user|
+  existing_user = User.find_by(email_address: user[:email_address])
+
+  unless existing_user
+    User.create!(email_address: user[:email_address], password: user[:password])
+  end
+end
