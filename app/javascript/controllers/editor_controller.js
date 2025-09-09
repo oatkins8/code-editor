@@ -11,4 +11,8 @@ export default class extends Controller {
       extensions: [basicSetup]
     })
   }
+
+  disconnect() {
+    this.editor.destroy
+  }
 }
