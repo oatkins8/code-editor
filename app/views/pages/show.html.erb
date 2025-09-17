@@ -1,4 +1,8 @@
 <h1>Pages#show</h1>
 <p>Find me in app/views/pages/show.html.erb</p>
 
-<div data-controller="editor" data-editor-content-value="<%= @page.content %>"></div> 
+<div 
+  data-controller="editor" 
+  data-editor-content-value="<%= @page.content %>"
+  data-editor-update-url-value="<%= page_path(@page) %>"> 
+</div> 
