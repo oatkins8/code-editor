@@ -5,7 +5,7 @@ import { EditorView } from "@codemirror/view"
 // Connects to data-controller="controller"
 export default class extends Controller {
   static values = {
-    content: String
+    content: String,
     updateUrl: String
   }
 
@@ -13,11 +13,22 @@ export default class extends Controller {
     this.editor = new EditorView({
       doc: this.contentValue,
       parent: this.element,
-      extensions: [basicSetup]
+      extensions: [
+        basicSetup,
+        EditorView.updateListener.of((update) => {
+          if(update.docChanged) {this.#update()}
+        })
+      ]
     })
   }
 
   disconnect() {
     this.editor.destroy()
+  }
+
+  // private (use #)
+
+  #update() {
+    console.log("Update")
   }
 }
