@@ -10,6 +10,10 @@ export default class extends Controller {
     updateUrl: String
   }
 
+  initialize() {
+    this.debouncedUpdate = debounce(() => this.#update())
+  }
+
   connect() {
     this.editor = new EditorView({
       doc: this.contentValue,
