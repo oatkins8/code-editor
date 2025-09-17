@@ -5,10 +5,10 @@ import { EditorView } from "@codemirror/view"
 // Connects to data-controller="controller"
 export default class extends Controller {
   static values = { content: String }
-  
+
   connect() {
     this.editor = new EditorView({
-      doc: "Hello, from Rails Designer",
+      doc: this.contentValue,
       parent: this.element,
       extensions: [basicSetup]
     })
