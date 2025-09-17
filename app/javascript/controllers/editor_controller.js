@@ -28,7 +28,22 @@ export default class extends Controller {
 
   // private (use #)
 
-  #update() {
-    console.log("Update")
+  async #update() {
+    const response = await fetch(
+      // automatic getter from static values
+      this.updateUrlValue, 
+      {
+        method: "PUT",
+        headers: {
+          "X-CSRF-Token": document.querySelector('[name="csrf-token"]').content,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          page: {
+            content: this.editor.state.doc.toString()
+          }
+        })
+      }
+    )
   }
 }
