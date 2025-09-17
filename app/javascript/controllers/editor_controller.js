@@ -15,9 +15,12 @@ export default class extends Controller {
       parent: this.element,
       extensions: [
         basicSetup,
-        EditorView.updateListener.of((update) => {
+        // EditorView.updateListener.of((update) => {
+        //   if(update.docChanged) {this.#update()}
+        // })
+        EditorView.updateListener.of(function(update) {
           if(update.docChanged) {this.#update()}
-        })
+        }.bind(this))
       ]
     })
   }
