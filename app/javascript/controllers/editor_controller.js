@@ -5,7 +5,7 @@ import { EditorView } from "@codemirror/view"
 // Connects to data-controller="controller"
 export default class extends Controller {
   connect() {
-    this.Editor = new EditorView({
+    this.editor = new EditorView({
       doc: "Hello, from Rails Designer",
       parent: this.element,
       extensions: [basicSetup]
