@@ -1,6 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import { basicSetup } from "codemirror"
 import { EditorView } from "@codemirror/view"
+import { debounce } from "./helpers"
 
 // Connects to data-controller="controller"
 export default class extends Controller {
