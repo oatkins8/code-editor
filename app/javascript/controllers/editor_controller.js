@@ -21,7 +21,7 @@ export default class extends Controller {
       extensions: [
         basicSetup,
         EditorView.updateListener.of((update) => {
-          if(update.docChanged) {this.#update()}
+          if (update.docChanged) { this.debouncedUpdate() }
         })
       ]
     })
