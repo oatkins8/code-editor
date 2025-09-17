@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :passwords, param: :token
 
   root to: "pages#show"
+
+  resources :pages, only: %i[update]
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
