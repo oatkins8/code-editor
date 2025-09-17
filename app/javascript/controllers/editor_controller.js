@@ -4,7 +4,10 @@ import { EditorView } from "@codemirror/view"
 
 // Connects to data-controller="controller"
 export default class extends Controller {
-  static values = { content: String }
+  static values = {
+    content: String
+    updateUrl: String
+  }
 
   connect() {
     this.editor = new EditorView({
