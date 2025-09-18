@@ -10,6 +10,8 @@ export default class extends Controller {
     updateUrl: String
   }
 
+  static targets = ["status"] 
+
   initialize() {
     this.debouncedUpdate = debounce(() => this.#update())
   }
