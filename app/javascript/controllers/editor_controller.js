@@ -3,6 +3,12 @@ import { basicSetup } from "codemirror"
 import { EditorView } from "@codemirror/view"
 import { debounce } from "./helpers/debounce"
 
+const statuses = {
+  saved: "Saved",
+  saving: "Saving...",
+  failed: "Save failed"
+}
+
 // Connects to data-controller="controller"
 export default class extends Controller {
   static values = {
