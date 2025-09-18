@@ -58,5 +58,9 @@ export default class extends Controller {
         })
       }
     )
+
+    response.ok ?
+      this.statusTarget.textContent = statuses.saved :
+      this.statusTarget.textContent = statuses.failed
   }
 }
